@@ -62,7 +62,6 @@ const Categories = ({categories}) => {
       style={{
         height: 150,
       }}>
-      <Text>sadasdasd</Text>
       <FlatList
         data={categories}
         horizontal

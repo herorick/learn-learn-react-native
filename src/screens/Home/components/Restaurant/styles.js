@@ -1,8 +1,9 @@
 import {StyleSheet} from 'react-native';
+import {SIZES} from '../../../../constants';
 
 const styles = StyleSheet.create({
-  imageWrapper: {
-    position: 'relative',
+  restaurantItemWrapper: {
+    padding: SIZES.padding * 2,
   },
 });
 

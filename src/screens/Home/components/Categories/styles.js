@@ -8,17 +8,15 @@ export default StyleSheet.create({
     width: 80,
     backgroundColor: 'blue',
   },
-  itemWrapper: {
+  categoryItem: {
     padding: SIZES.padding,
     paddingBottom: SIZES.padding * 2,
-    backgroundColor:
-      chooseCategory?.id === item.id ? COLORS.primary : COLORS.white,
     borderRadius: SIZES.radius,
-    alignItems: 'center',
     justifyContent: 'center',
+    alignContent: 'center',
     marginRight: SIZES.padding,
+    // ...SHADOW.cart,
   },
-
   iconWrapper: {
     width: 50,
     height: 50,

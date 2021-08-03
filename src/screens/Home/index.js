@@ -23,10 +23,7 @@ const Home = () => {
       <SafeAreaView style={styles.container}>
         <Header currentLocation={currentLocation} />
         <Categories categories={categories} />
-
-        <Restaurant restaurants={restaurants} />
-
-        <Restaurant restaurants={restaurants} />
+        <Restaurant categories={categories} restaurants={restaurants} />
       </SafeAreaView>
     </View>
   );
