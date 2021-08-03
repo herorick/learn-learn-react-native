@@ -1,10 +1,17 @@
 import React from 'react';
-import {View, Image, FlatList, Text} from 'react-native';
+import {
+  View,
+  Image,
+  FlatList,
+  Text,
+  TouchableOpacity,
+  Animated,
+} from 'react-native';
 import {SIZES, FONTS, COLORS, icons, categoryData} from '../../../../constants';
 import styles from './styles';
-const Restaurant = ({restaurants, categories}) => {
+const Restaurant = ({restaurants, categories, navigation}) => {
   const getCategoryNameById = id => {
-    let category = categories.filter(a => a.id == id);
+    let category = categories.filter(a => a.id === id);
     if (category.length > 0) {
       return category[0].name;
     }
@@ -12,9 +19,10 @@ const Restaurant = ({restaurants, categories}) => {
   };
 
   const renderItem = item => {
-    console.log(item);
     return (
-      <View style={styles.restaurantItemWrapper}>
+      <TouchableOpacity
+        style={styles.restaurantItemWrapper}
+        onPress={() => navigation.navigate('Restaurant', {restaurant: item})}>
         <View>
           <Image
             source={item.photo}
@@ -61,7 +69,7 @@ const Restaurant = ({restaurants, categories}) => {
             </Text>
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
   return (

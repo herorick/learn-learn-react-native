@@ -8,7 +8,7 @@ import {
 import {View, SafeAreaView, StyleSheet, Text} from 'react-native';
 import {Header, Categories, Restaurant} from './components';
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [restaurants, setRestaurants] = useState(null);
   const [categories, setCategories] = useState(null);
@@ -23,7 +23,11 @@ const Home = () => {
       <SafeAreaView style={styles.container}>
         <Header currentLocation={currentLocation} />
         <Categories categories={categories} />
-        <Restaurant categories={categories} restaurants={restaurants} />
+        <Restaurant
+          navigation={navigation}
+          categories={categories}
+          restaurants={restaurants}
+        />
       </SafeAreaView>
     </View>
   );
